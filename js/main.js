@@ -23,15 +23,8 @@ var cards = [
 	}
 ];
 var cardsInPlay = [];
-var gameBoard, resetButton;
-
-document.addEventListener("DOMContentLoaded", function(){
-  	//"start" to the app
-	gameBoard = document.getElementById('game-board');
-	resetButton = document.getElementById('reset-button');
-	resetButton.addEventListener("click", resetBoard);
-  	createBoard();
-});
+var gameBoard = document.getElementById('game-board');
+	
 
 var flipBack = function(){
   	var clickedCards = document.getElementsByClassName("clicked"); //clickedCards is a nodeList
@@ -46,7 +39,6 @@ var flipBack = function(){
 var checkForMatch = function() {
 	if (cardsInPlay[0] === cardsInPlay[1]) {
 		alert("You found a match!");
-      	//reset board or keep going?
       	resetBoard();
 	} else {
 		alert("Sorry try again.");
@@ -64,7 +56,6 @@ var flipCard = function() {
 	if (cardsInPlay.length === 2) {
       	//delay the alert message 1/10th of a second
       	setTimeout(checkForMatch, 100);
-		//checkForMatch();
 	}
 }
 
@@ -99,5 +90,4 @@ var resetBoard = function() {
 	createBoard();
 }
 
-//createBoard();
-//resetButton.addEventListener("click", resetBoard);
+createBoard();
