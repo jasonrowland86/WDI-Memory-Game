@@ -40,7 +40,7 @@ var flipBack = function(){
       	clickedCards[i].className = "";
 	}
   	cardsInPlay = [];
-};
+}
 
 
 var checkForMatch = function() {
@@ -52,7 +52,7 @@ var checkForMatch = function() {
 		alert("Sorry try again.");
       	flipBack(); //turn over clicked cards
 	}
-};
+}
 
 //Added setTimeout to make cards flip before alert shows
 var flipCard = function() {
@@ -66,7 +66,7 @@ var flipCard = function() {
       	setTimeout(checkForMatch, 100);
 		//checkForMatch();
 	}
-};
+}
 
 //Randomize board creation
 var createBoard = function() {
@@ -91,13 +91,13 @@ var createBoard = function() {
 		cardElement.addEventListener('click', flipCard);
 		gameBoard.appendChild(cardElement);
 	}
-};
+}
 
 var resetBoard = function() {
   	cardsInPlay = [];
   	gameBoard.innerHTML = ""; //the fastest way of removing all elements in a parent element
 	createBoard();
-};
+}
 
 //createBoard();
 //resetButton.addEventListener("click", resetBoard);
