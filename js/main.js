@@ -35,6 +35,11 @@ var flipBack = function(){
   	cardsInPlay = [];
 }
 
+var resetBoard = function() {
+  	cardsInPlay = [];
+  	gameBoard.innerHTML = ""; //the fastest way of removing all elements in a parent element
+	createBoard();
+}
 
 var checkForMatch = function() {
 	if (cardsInPlay[0] === cardsInPlay[1]) {
@@ -84,10 +89,5 @@ var createBoard = function() {
 	}
 }
 
-var resetBoard = function() {
-  	cardsInPlay = [];
-  	gameBoard.innerHTML = ""; //the fastest way of removing all elements in a parent element
-	createBoard();
-}
 
 createBoard();
